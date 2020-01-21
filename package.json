@@ -1,0 +1,52 @@
+{
+  "name": "hiq-worksample",
+  "version": "1.0.0",
+  "description": "HiQ worksample",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "start": "DEBUG=app node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theted/HiQ-worksample.git"
+  },
+  "author": "Fredrik Sundberg <fredrik@sundbergmedia.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theted/HiQ-worksample/issues"
+  },
+  "homepage": "https://github.com/theted/HiQ-worksample#readme",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
+    "helmet": "^3.21.2",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.4.2",
+    "file-loader": "^5.0.2",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "pug-plain-loader": "^1.0.0",
+    "style-loader": "^1.1.3",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-loader": "^15.8.3",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}
