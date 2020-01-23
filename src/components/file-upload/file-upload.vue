@@ -4,17 +4,6 @@
 
   import Vue from 'vue'
   import { upload } from '../../services/file-upload.js';   // real service
-  
-  const createItem = (type, data, el = 'app') => {
-    const MyComponent = Vue.extend(type)
-    const component = new MyComponent({propsData: data}).$mount()
-    document.getElementById(el).appendChild(component.$el)
-    return component
-  }
-  
-  import Status from '../Status/Status.vue'
-  // import Storage from '../../services/storage.js'
-  // const Store = new Storage()
 
   const STATUS_INITIAL = 0, STATUS_SAVING = 1, STATUS_SUCCESS = 2, STATUS_FAILED = 3;
   const ALLOWED_MIMES = [
@@ -24,9 +13,10 @@
 
   export default {
     name: 'file-upload',
-    components: {Status},
+    components: {},
     data() {
       return {
+        data: '',
         uploadedFiles: [],
         uploadError: null,
         currentStatus: null,
@@ -56,19 +46,12 @@
           .then(x => {
             this.uploadedFiles = [].concat(x);
             this.currentStatus = STATUS_SUCCESS;
-
-            // emit events / create item
             console.log('UPLOAD EVENT:', x)
+            this.data = x.data
             this.$emit('upload', x.data)
-            this.createItem(x.data.ciUploadId)
-            
-            // append item to localstorage
-            let current = Store.getJSON('current')
 
-            if(!current || !current.length) current = []
-            
-            current.push(x.data.ciUploadId)
-            Store.setJSON('current', current)
+            // create element or stuff
+            console.log(x.datas)
 
             this.reset()
           })
@@ -91,10 +74,6 @@
           })
 
         this.save(formData)
-      },
-      // ! temp !
-      createItem(id) {
-        createItem(Status, {id})
       }
     },
     mounted() {

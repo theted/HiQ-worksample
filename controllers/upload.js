@@ -6,15 +6,10 @@ const upload = async (req, res) => {
   let files = req.files.data
   if (!Array.isArray(files)) files = [files]
 
-  // upload file
-  let { output } = await uploadFiles(files)
+  let allResults = await uploadFiles(files)
+  let output = await processFile(allResults[0])
 
-  // parse output
-  output = await processFile(output)
-
-  console.log('Output:', output)
-
-  res.send(output)
+  return res.send(output)
 }
 
 module.exports = { upload }
