@@ -1,4 +1,6 @@
-.dropbox
+@import "../../style/config.styl"
+
+.dropbox, .results
   border: 1px solid lighten(#4D2DAD, 20%)
   color: #f3f3f3
   position: relative
@@ -6,7 +8,7 @@
   transition: all 450ms
   box-shadow: inset 5px 5px 50px rgba(0, 0, 0, 0.15)
   font-size: 72%
-  background: linear-gradient(darken(#4D2DAD, 1%), darken(#5047F0, 1%))
+  background: linear-gradient(darken(BACKGROUND, 1%), darken(rgba(31,179,237,1), 12%))
   transition: background 1s ease-out
   background-size:100% 200%
   cursor:pointer
@@ -27,3 +29,16 @@
 
 .dropzone-over
   background-position: 0 100%
+
+
+.results
+  pre
+    padding: 0 2em 1em
+    font-size: 132%
+    max-width: 100%
+    overflow: scroll
+    max-width: 100%
+    max-height: 400px
+
+body
+  overflow: hidden

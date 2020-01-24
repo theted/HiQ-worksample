@@ -1,6 +1,7 @@
 <template src="./App.pug" lang="pug"></template>
 
 <script>
+
   import Vue from "vue"
   import FileUpload from "../file-upload/file-upload.vue"
 
