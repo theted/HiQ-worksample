@@ -4,7 +4,8 @@ Simple file upload interface, with som processing
 ## Development
 ```sh
 npm install   # install dependencies
-npm run dev   # start live dev-server
+npm start     # start backnd
+npm run dev   # start frontend dev-server
 ```
 
 ## Tech stack
