@@ -19,17 +19,17 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        exclude: '/node_modules/',
+        exclude: '/node_modules/'
       },
 
       {
         test: /\.pug$/,
         exclude: /node_modules/,
-        loader: 'pug-plain-loader',
+        loader: 'pug-plain-loader'
       },
       {
         test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader',
+        loader: 'style-loader!css-loader!stylus-loader'
       },
       {
         test: /\.js$/,
@@ -47,7 +47,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.common.js'
+      vue$: 'vue/dist/vue.common.js'
     }
   },
   devServer: {
@@ -66,7 +66,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       optimization: {
-        minimizer: [new UglifyJsPlugin()],
+        minimizer: [new UglifyJsPlugin()]
       },
       'process.env': {
         NODE_ENV: '"production"'

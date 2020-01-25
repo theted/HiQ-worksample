@@ -9,14 +9,6 @@
     name: "app",
     components: {
       FileUpload
-    },
-    data() {
-      return {
-      }
-    },
-    methods: {
-    },
-    mounted() {
     }
   }
 </script>
