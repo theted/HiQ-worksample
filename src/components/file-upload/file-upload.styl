@@ -1,24 +1,27 @@
 @import "../../style/config.styl"
 
 .dropbox, .result
-  border: 1px solid lighten(#4D2DAD, 20%)
+  border: 1px solid lighten(BACKGROUND, 10%)
   color: #f3f3f3
   position: relative
   cursor: pointer
   transition: all 450ms
   box-shadow: inset 5px 5px 50px rgba(0, 0, 0, 0.15)
   font-size: 72%
-  background: linear-gradient(darken(BACKGROUND, 1%), darken(rgba(31,179,237,1), 12%))
+  background: linear-gradient(darken(SECONDARY, 1%), darken(BACKGROUND, 2%))
   transition: background 1s ease-out
   background-size:100% 200%
-  cursor:pointer
+  border-radius: 14px
+  filter: drop-shadow(2px 2px 30px SHADE)
+  margin-bottom: 2em
+
   &:hover, &:focus
-    background-position: 0 100%
+    background-position: 0 50%
 
   p
-    font-size: 1.2em
     text-align: center
-    padding: 50px 0
+    padding: 5em 0
+
 
   .input-file
     opacity: 0
