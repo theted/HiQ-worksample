@@ -44,3 +44,5 @@ app.get('/*', (req, res, next) => {
 
 // start server
 app.listen(config.port, () => debug('Server runining @ port ' + config.port))
+
+module.exports = app
