@@ -46,13 +46,7 @@
           .then(x => {
             this.uploadedFiles = [].concat(x);
             this.currentStatus = STATUS_SUCCESS;
-            console.log('UPLOAD EVENT:', x)
-            this.data = x.data
             this.$emit('upload', x.data)
-
-            // create element or stuff
-            console.log(x.datas)
-
             this.reset()
           })
           .catch(err => {

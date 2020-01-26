@@ -1,5 +1,7 @@
 #app.animated.fadeIn
   h1 Text wrangler
   p Upload a file, process it and sorround the most common word with "foo" + "bar"!
-  file-upload
-  footer
+  file-upload(@upload="uploadEvent")
+  
+  #results(v-for="item in items")
+    Result(:content="item.content")

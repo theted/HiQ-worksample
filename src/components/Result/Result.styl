@@ -1,0 +1,26 @@
+@import "../../style/config.styl"
+
+DARK = darken(BACKGROUND, 20%)
+
+.result
+  border: 1px DARK
+  padding: 1em
+  position: relative
+  &:hover, &:focus
+    background-position: 0 30%
+
+  pre
+    padding: 0 2em 1em
+    font-size: 132%
+    max-width: 100%
+    overflow-x: hidden
+    overflow-y: scroll
+    max-height: 400px
+
+
+  .close
+    background:  DARK
+    padding: .5em
+    position: absolute
+    top: 0px
+    right: 0px
