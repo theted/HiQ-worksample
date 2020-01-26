@@ -10,9 +10,10 @@ const cors = require('cors')
 const fileUpload = require('express-fileupload')
 const debug = require('debug')('app')
 const app = express()
-const config = { port: 4244 }
+const env = process.env.NODE_ENV || 'development'
+const config = { port: (env !== 'test') ? 4244 : 8899 }
 
-require('dotenv').config()
+debug('In', env, 'environment')
 
 // set filesize limits
 app.use(bodyParser.json({ limit: '50mb' }))
