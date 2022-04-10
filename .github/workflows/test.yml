@@ -28,4 +28,8 @@ jobs:
     - run: npm ci
     - run: npm install jest
     - run: npm run build --if-present
-    - run: npm start & npm test
+    - name: Run Tests
+        uses: BerniWittmann/background-server-action@latest
+        with:
+          command: npm test
+          start: npm start
