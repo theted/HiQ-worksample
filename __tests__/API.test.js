@@ -1,4 +1,5 @@
 const request = require('supertest')
+
 const app = require('../server')
 
 describe('File upload endpoints', () => {
@@ -17,6 +18,15 @@ describe('File upload endpoints', () => {
       .attach('data', __dirname + '/data/tripple.txt')
 
     expect(res.text).toEqual('foohellobar foohellobar fooworldbar fooworldbar foobazbar foobazbar hej')
+    expect(res.statusCode).toEqual(200)
+  })
+
+  it('handles empty file', async () => {
+    const res = await request(app)
+      .post('/upload')
+      .attach('data', __dirname + '/data/empty.txt')
+
+    expect(res.text).toEqual('')
     expect(res.statusCode).toEqual(200)
   })
 
