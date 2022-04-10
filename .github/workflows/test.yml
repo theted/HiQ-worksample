@@ -35,7 +35,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Tests
-        uses: BerniWittmann/background-server-action@latest
+        uses: BerniWittmann/background-server-action@1.0.4
         with:
           command: npm test
           start: npm start
