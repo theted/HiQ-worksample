@@ -28,6 +28,5 @@ jobs:
     - run: npm ci
     - run: npm install jest
     - run: npm run build --if-present
-    - run: npm install nobup
-    - run: nobup server.js
+    - run: nohup node server.js
     - run: npm test
