@@ -7,6 +7,10 @@ const upload = async (req, res) => {
   if (!Array.isArray(files)) files = [files]
 
   const allResults = await uploadFiles(files)
+
+  console.log({ allResults })
+
+  // TODO: support for multiple files
   const output = await processFile(allResults[0])
 
   return res.send(output)

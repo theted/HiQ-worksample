@@ -13,7 +13,7 @@ describe('File upload endpoints', () => {
     const res = await request(app)
       .post('/upload')
       // .attach('data', path.join(__dirname, 'data', 'wat.txt'))
-      .attach('data', new Buffer('this is is a simple test'), 'wat.txt')
+      .attach('data', Buffer.from('this is is a simple test'), 'wat.txt')
 
     expect(res.text).toEqual('this fooisbar fooisbar a simple test')
     expect(res.statusCode).toEqual(200)
@@ -23,7 +23,7 @@ describe('File upload endpoints', () => {
     const res = await request(app)
       .post('/upload')
       // .attach('data', path.join(__dirname, 'data', 'tripple.txt'))
-      .attach('data', new Buffer('hello hello world world baz baz hej'), 'tripple.txt')
+      .attach('data', Buffer.from('hello hello world world baz baz hej'), 'tripple.txt')
 
     expect(res.text).toEqual('foohellobar foohellobar fooworldbar fooworldbar foobazbar foobazbar hej')
     expect(res.statusCode).toEqual(200)
@@ -33,7 +33,7 @@ describe('File upload endpoints', () => {
     const res = await request(app)
       .post('/upload')
       // .attach('data', path.join(__dirname, 'data', 'empty.txt'))
-      .attach('data', new Buffer(''), 'empty.txt')
+      .attach('data', Buffer.from(''), 'empty.txt')
 
     expect(res.text).toEqual('')
     expect(res.statusCode).toEqual(200)
