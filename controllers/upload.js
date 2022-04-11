@@ -14,17 +14,10 @@ const upload = async (req, res) => {
 
   if (!Array.isArray(files)) files = [files]
 
-  // const allResults = await uploadFiles(files)
-  const rawResults = await processRaw(files)
-
-  // debug
-  // const contents = await readFile(allResults[0])
-  const contents = rawResults
-  console.log({contents})
+  const rawText = await processRaw(files)
 
   // TODO: support for multiple files
-  const output = await processText(contents)
-  // const output = await processFile(allResults[0])
+  const output = await processText(rawText)
 
   return res.send(output)
 }

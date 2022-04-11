@@ -5,15 +5,14 @@ const app = require('../server')
 afterAll(async () => {
   setTimeout(() => {
     app.exit()
-  }, 500)
+  }, 100)
 })
 
 describe('File upload endpoints', () => {
   it('should process files as expected', async () => {
     const res = await request(app)
       .post('/upload')
-      // .attach('data', path.join(__dirname, 'data', 'wat.txt'))
-      .attach('data', Buffer.from('this is is a simple test'), 'wat.txt')
+      .attach('data', path.join(__dirname, 'data', 'wat.txt'))
 
     expect(res.text).toEqual('this fooisbar fooisbar a simple test')
     expect(res.statusCode).toEqual(200)
@@ -22,8 +21,7 @@ describe('File upload endpoints', () => {
   it('should handle multiple most popular words', async () => {
     const res = await request(app)
       .post('/upload')
-      // .attach('data', path.join(__dirname, 'data', 'tripple.txt'))
-      .attach('data', Buffer.from('hello hello world world baz baz hej'), 'tripple.txt')
+      .attach('data', path.join(__dirname, 'data', 'tripple.txt'))
 
     expect(res.text).toEqual('foohellobar foohellobar fooworldbar fooworldbar foobazbar foobazbar hej')
     expect(res.statusCode).toEqual(200)
@@ -32,7 +30,6 @@ describe('File upload endpoints', () => {
   it('handles empty file', async () => {
     const res = await request(app)
       .post('/upload')
-      // .attach('data', path.join(__dirname, 'data', 'empty.txt'))
       .attach('data', Buffer.from(''), 'empty.txt')
 
     expect(res.text).toEqual('')

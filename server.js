@@ -29,7 +29,7 @@ app.use(cors())
 app.use(helmet())
 
 // enable files upload
-app.use(fileUpload({ createParentPath: true, debug: true }))
+app.use(fileUpload({ createParentPath: true }))
 
 // serve static files
 app.use(express.static(path.join(__dirname, 'dist')))
