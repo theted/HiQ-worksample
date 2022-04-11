@@ -2,11 +2,10 @@ const request = require('supertest')
 const path = require('path')
 const app = require('../server')
 
-afterAll(async () => {
-  setTimeout(() => {
-    app.exit()
-  }, 100)
-})
+afterAll(() => {
+  app.close();
+});
+
 
 describe('File upload endpoints', () => {
   it('should process files as expected', async () => {
