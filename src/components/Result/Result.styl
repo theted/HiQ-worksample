@@ -6,17 +6,22 @@ DARK = darken(BACKGROUND, 20%)
   border: 1px DARK
   padding: 1em
   position: relative
+  height: auto
+  max-height: 4000px
   &:hover, &:focus
     background-position: 0 30%
 
   pre
-    padding: 0 2em 1em
+    padding: 1em
     font-size: 132%
-    max-width: 100%
-    overflow-x: hidden
+    width: 100% 
     overflow-y: scroll
-    max-height: 400px
+    max-height: 50vh
+    white-space: pre-wrap
+    word-wrap: break-word
 
+  pre::-webkit-scrollbar
+    display: none
 
   .close
     background:  DARK
