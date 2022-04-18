@@ -5,4 +5,4 @@ services:
       context: ./
     command: npm start
     ports:
-      - "4244:4244"
+      - "80:4244"

@@ -11,6 +11,6 @@ RUN npm run build --if-present
 
 USER node
 
-EXPOSE 4244
+EXPOSE 80
 
 CMD ["npm", "start"]
