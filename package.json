@@ -4,10 +4,10 @@
   "description": "HiQ worksample",
   "main": "server.js",
   "scripts": {
-    "test": "DEBUG=app cross-env NODE_ENV=test jest --verbose",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "test": "cross-env DEBUG=app cross-env NODE_ENV=test jest --verbose",
+    "dev": "cross-env NODE_ENV=development VUE_APP_ROOT_API=abcd webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "start": "DEBUG=app node server.js"
+    "start": "cross-env DEBUG=app node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "dependencies": {
     "axios": "^0.21.2",
     "cors": "^2.8.5",
+    "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.9",
@@ -35,7 +36,6 @@
     "babel-jest": "^25.1.0",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
-    "cross-env": "^6.0.3",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
