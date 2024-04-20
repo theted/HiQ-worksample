@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/theted/HiQ-worksample#readme",
   "dependencies": {
-    "axios": "^0.21.2",
+    "axios": "^0.28.0",
     "cors": "^2.8.5",
     "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",
